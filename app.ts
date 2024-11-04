@@ -1,8 +1,9 @@
+import { config } from "process";
 import { CF5KIT } from "./kit/CF5KIT";
 
 export const app = new CF5KIT({
     pages: {
-        "index": {
+        "/": {
             elements: [
                 {
                     type: "div",
@@ -11,6 +12,10 @@ export const app = new CF5KIT({
                     children: []
                 }
             ]
-        }}
+        }
+    },
+    config: {
+        port: 3000
     }
+}
 );
