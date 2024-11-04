@@ -1,5 +1,6 @@
 import http from "http";
 import { CF5KIT_APP } from "../types/APP";
+import { compilePage } from "./compilePage";
 
 
 export const startServer = (app: CF5KIT_APP) => {
@@ -15,6 +16,9 @@ export const startServer = (app: CF5KIT_APP) => {
             return res.end("Page not found.")
         }
         // now compile the page down to html
+        res.statusCode = 200;
+        res.end(compilePage(routes[req.url]))
+
     });
     
     

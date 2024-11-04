@@ -2,7 +2,7 @@ interface CF5KIT_ELEMENT_BASE {
     type: string,
     styles: [],
     events: {},
-    children: []
+    children: CF5KIT_ELEMENT[]
 }
 
 export interface CF5KIT_ELEMENT_DIV extends CF5KIT_ELEMENT_BASE {

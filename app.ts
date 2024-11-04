@@ -9,7 +9,14 @@ export const app = new CF5KIT({
                     type: "div",
                     styles: [],
                     events: {},
-                    children: []
+                    children: [
+                        {
+                            type: "div",
+                            styles: [],
+                            events: [],
+                            children: []
+                        }
+                    ]
                 }
             ]
         }
