@@ -1,5 +1,5 @@
 import { config } from "process";
-import { CF5KIT } from "./kit/CF5KIT";
+import { CF5KIT } from "./_kit/CF5KIT";
 
 export const app = new CF5KIT({
     pages: {
