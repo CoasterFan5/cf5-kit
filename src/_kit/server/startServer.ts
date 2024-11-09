@@ -1,4 +1,4 @@
-import http from "http";
+import http from "node:http";
 import type { CF5KIT_APP } from "../types/APP";
 import { compilePage } from "./compilePage";
 

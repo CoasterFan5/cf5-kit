@@ -3,7 +3,7 @@ import type { CF5KIT_ELEMENT } from "../types/element";
 import { buildStyles } from "./styleBuilder";
 
 const getElementString = (element: CF5KIT_ELEMENT) => {
-	if (element.type == "div") {
+	if (element.type === "div") {
 		let str = `<${element.type} style="${buildStyles(element.styles)}">`;
 		if (element.body) {
 			str += element.body;
@@ -13,9 +13,8 @@ const getElementString = (element: CF5KIT_ELEMENT) => {
 			str += getElementString(child);
 		}
 		return `${str}</${element.type}>`;
-	} else {
-		return `<${element.type} style="${buildStyles(element.styles)}">${element.body}</${element.type}>`;
 	}
+	return `<${element.type} style="${buildStyles(element.styles)}">${element.body}</${element.type}>`;
 };
 
 export const compilePage = (page: CF5KIT_PAGE): string => {
