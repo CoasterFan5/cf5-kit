@@ -15,6 +15,18 @@ export const app = new CF5KIT({
                             styles: [],
                             events: [],
                             children: []
+                        },
+                        {
+                            type: "div",
+                            styles: [],
+                            events: [],
+                            children: []
+                        },
+                        {
+                            type: "p",
+                            styles: [],
+                            events: [],
+                            body: "Hello World!"
                         }
                     ]
                 }

@@ -1,36 +1,38 @@
 import { CF5KIT_ELEMENT } from "../types/element";
 import { CF5KIT_PAGE } from "../types/PAGE";
 
-let vDom = `` //This is the virtual dom we all know and love
-
 const getElementString = (element: CF5KIT_ELEMENT) => {
 
-    let openingString = `<${element.type}`
-    let closingString = ``
-    let content = ``
-
-    if(element.children.length == 0) {
-        openingString += `/>`
+    if(element.type == "div") {
+        let str = `<${element.type}>`
+        if(element.body) {
+            str += element.body
+        }
+        const children = element.children ?  element.children : []
+        for(const child of children) {
+            str += getElementString(child)
+        }
+        return `${str}</${element.type}>`
     } else {
-        openingString += ">"
-        closingString = `</${element.type}>`
+        return `<${element.type}>${element.body}</${element.type}>`
     }
 
-    for (const childElement of element.children) {
-        content += getElementString(childElement)
-    }
-
-    return `${openingString}${content}${closingString}`
+    
 
 }
 
 export const compilePage = (page: CF5KIT_PAGE): string => {
 
+    let vDom = ''
+
     for(const element of page.elements) {
        vDom += getElementString(element)   
     }
 
-    console.log(vDom)
-
-    return vDom
+    return `<style>
+    body,
+    body * {
+        all: unset;
+    }
+        </style><html><body>${vDom}</body></html>`
 }   
