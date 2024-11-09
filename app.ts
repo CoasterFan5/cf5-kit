@@ -7,24 +7,16 @@ export const app = new CF5KIT({
             elements: [
                 {
                     type: "div",
-                    styles: [],
+                    styles: {
+                        "font-family": "Verdana",
+                    },
                     events: {},
                     children: [
                         {
-                            type: "div",
-                            styles: [],
-                            events: [],
-                            children: []
-                        },
-                        {
-                            type: "div",
-                            styles: [],
-                            events: [],
-                            children: []
-                        },
-                        {
                             type: "p",
-                            styles: [],
+                            styles: {
+                                color: "blue"
+                            },
                             events: [],
                             body: "Hello World!"
                         }

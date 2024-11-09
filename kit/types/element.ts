@@ -1,6 +1,8 @@
+import { CF5KIT_STYLES } from "./styles"
+
 interface CF5KIT_ELEMENT_BASE {
     type: "div" | "p",
-    styles: [],
+    styles: CF5KIT_STYLES,
     events: {},
 }
 
