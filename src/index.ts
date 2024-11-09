@@ -5,6 +5,3 @@ Add code in ./app.ts
 
 import { app } from "./app";
 app.dev();
-
-
-
